@@ -19,6 +19,7 @@ public class Main {
         String tentativo = new String();
 
         do {
+            //creazione scanner per input
             Scanner scan = new Scanner(System.in);
             System.out.println("inserire un numero per provare ad indovinare");
             String stringaNum = scan.nextLine();
