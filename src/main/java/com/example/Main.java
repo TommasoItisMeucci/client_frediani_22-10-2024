@@ -16,23 +16,23 @@ public class Main {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
-        int tentativo = 0;
+        String tentativo = new String();
 
         do {
             Scanner scan = new Scanner(System.in);
-            System.out.println("");
-            int stringaNum = scan.nextInt();
-            System.out.println("inserito" + stringaNum);
-
+            System.out.println("inserire un numero per provare ad indovinare");
+            String stringaNum = scan.nextLine();
+            System.out.println("hai inserito " + stringaNum);
             tentativo = stringaNum;
             out.writeBytes(tentativo + "\n");
-
             String risultato = in.readLine();
             if (risultato.equals("=")) {
-                int tentativi = in.read();
-                System.out.println("HAI INDOVINATO IN" + tentativi + "tentativi");    
+                String r = in.readLine();
+                int tentativi = Integer.parseInt(r);
+                System.out.println("HAI INDOVINATO IN " + tentativi + " TENTATIVI");    
                 break;
             }
+
 
             switch (risultato) {
                 case "<":
